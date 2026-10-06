@@ -1,0 +1,25 @@
+variable "project" {
+    type = string
+    default = "roboshop"
+}
+
+variable "environment" {
+    type = string
+    default = "dev"
+}
+
+variable "sg_names" {
+    type = list
+    default = [
+        #Databases
+        "mongodb", "redis", "mysql", "rabbitmq",
+        #Ingress ALB
+        "ingress_alb",
+        #Bastion
+        "bastion",
+        #Openvpn
+        "openvpn",
+        "eks_control_plane", "eks_node"
+
+    ]
+}
