@@ -4,6 +4,6 @@ locals {
         environment = var.environment
         Terraform = "true"
     }
-    route53_zone_id = data.aws_ssm_parameter.route53_zone_id.value
+    #route53_zone_id = data.aws_ssm_parameter.route53_zone_id.value
 
 }
