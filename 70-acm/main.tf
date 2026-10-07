@@ -14,6 +14,10 @@ resource "aws_acm_certificate" "roboshop" {
   }
 }
 
+resource "aws_route53_zone" "roboshop" {
+  name = var.domain_name
+}
+
 resource "aws_route53_record" "roboshop" {
   for_each = {
     for dvo in aws_acm_certificate.roboshop.domain_validation_options : dvo.domain_name => {
@@ -28,7 +32,7 @@ resource "aws_route53_record" "roboshop" {
   records         = [each.value.record]
   ttl             = 60
   type            = each.value.type
-  zone_id         = local.route53_zone_id
+  zone_id         = aws_route53_zone.roboshop.id
 }
 
 resource "aws_acm_certificate_validation" "roboshop" {
