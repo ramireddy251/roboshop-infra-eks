@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "demo-terraform-statefile"
+    bucket = "ram-104050870679-us-east-1-an"
     key = "roboshop-dev-acm"
     region = "us-east-1"
     encrypt = true
