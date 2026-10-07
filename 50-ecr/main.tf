@@ -57,3 +57,43 @@ resource "aws_ecr_repository" "frontend" {
   }
   force_delete = true
 }
+
+resource "aws_ecr_repository" "mongodb" {
+  name                 = "${var.project}/mongodb"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+  force_delete = true
+}
+
+resource "aws_ecr_repository" "mysql" {
+  name                 = "${var.project}/mysql"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+  force_delete = true
+}
+
+resource "aws_ecr_repository" "rabbitmq" {
+  name                 = "${var.project}/rabbitmq"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+  force_delete = true
+}
+
+resource "aws_ecr_repository" "redis" {
+  name                 = "${var.project}/redis"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+  force_delete = true
+}
