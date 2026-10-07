@@ -13,3 +13,8 @@ data "aws_ssm_parameter" "frontend_alb_certificate_arn" {
 data "aws_ssm_parameter" "vpc_id" {
     name = "/${var.project}/${var.environment}/vpc_id"
 }
+
+data "aws_ssm_parameter" "route53_zone_id" {
+    name = "/${var.project}/${var.environment}/route53_zone_id"
+
+}
