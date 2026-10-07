@@ -82,7 +82,7 @@ resource "aws_lb_listener_rule" "frontend" {
 }
 
 
-resource "aws_route53_record" "frontend_alb" {
+resource "aws_route53_record" "frontend_alb_record" {
   zone_id = local.route53_zone_id
   name    = "*.${var.domain_name}"
   type    = "A"
