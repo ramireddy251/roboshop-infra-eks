@@ -5,8 +5,9 @@ module "db" {
 
   engine            = "mysql"
   engine_version    = "8.0"
-  instance_class    = "db.t4g.micro"
+  instance_class    = "db.t3.micro"
   allocated_storage = 20
+  storage_type      = "gp3"
 
   db_name  = "cities"
   username = "root"
