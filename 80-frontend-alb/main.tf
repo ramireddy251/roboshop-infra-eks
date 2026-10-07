@@ -50,6 +50,7 @@ resource "aws_lb_target_group" "frontend" {
   name     = "${var.project}-${var.environment}-frontend"
   port     = 80
   protocol = "HTTP"
+  target_type = "ip"
   vpc_id   = local.vpc_id
   deregistration_delay = 60
 
